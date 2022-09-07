@@ -1,11 +1,16 @@
-import './App.css';
+import React, { useState, useEffect } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <div className="center">this is project demo static web azure and ci-cd github</div>
-    </div>
-  );
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    (async function () {
+      const { body } = await( await fetch(`/api/message`)).json();
+      setData(body);
+    })();
+  });
+
+  return <div>{data}</div>;
 }
 
 export default App;
