@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
 
-function App() {
-  const [data, setData] = useState('');
+import React from 'react';
 
-  useEffect(() => {
-    (async function () {
-      const { body } = await( await fetch(`/api/message`)).json();
-      setData(body);
-    })();
-  });
-
-  return <div>{data}</div>;
+function App () {
+  return <div>
+    this is project static web azure
+  </div>
 }
 
 export default App;
